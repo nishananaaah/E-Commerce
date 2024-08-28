@@ -29,7 +29,7 @@ function Home() {
       <Cards />
       <Home4/>
       <Home5/>
-  
+   
     </div>
   );
 }

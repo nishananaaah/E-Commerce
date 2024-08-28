@@ -25,7 +25,7 @@ const Register2 = () => {
                 <input type="password"
                 name='password'
                 placeholder='*********'
-                
+                 
                 />
             </div>
             <div>
