@@ -46,6 +46,7 @@ const Collections = () => {
                   src={item.imageUrl}
                   alt="Product"
                   className="h-80 w-72 object-cover rounded-t-xl"
+                  onClick={()=>navigate(`/detail/${item.id}`)}
                 />
                 <div className="px-4 py-3">
                   <span className="text-gray-400 mr-3 uppercase text-xs">

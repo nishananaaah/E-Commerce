@@ -6,11 +6,11 @@ function About() {
       <div className='w-full md:w-1/2'>
         <img
           src="https://spearmintlove.com/cdn/shop/files/SIS-Sweater-Amour.jpg?crop=region&crop_height=1600&crop_left=4&crop_top=0&crop_width=1190&v=1718392349&width=480"
-          className="w-full"
+          className="w-[75vh]"
           alt="Baby product"
         />
       </div>
-      <div className="text-center p-4 w-full md:w-1/2 md:flex md:justify-center md:items-center">
+      <div className="text-center p-4 w-full md:w-1/2 md:flex md:justify-center md:items-center pr-56">
         <div>
           <br />
           <h1 className='text-4xl text-red-300 font-serif italic '>ABOUT US</h1>

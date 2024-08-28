@@ -162,34 +162,38 @@
       "name": "UPPAbaby Vista V2 Stroller",
       "brand": "Brand",
       "price": "$39999",
+      "category": "card",
       "originalPrice": "$45000"
     },
     {
-      "id": "2",
+      "id": "20",
       "imageUrl": "https://www.funcorp.in/cdn/shop/files/81Sr7NroqqL._SL1500_1370x.jpg?v=1690026233",
       "name": "Barbie Birthday Wishes Blonde Doll Pink",
       "brand": "Brand",
       "price": "$1999",
+      "category": "card",
       "originalPrice": "$2500"
     },
     {
-      "id": "3",
+      "id": "21",
       "imageUrl": "https://spearmintlove.com/cdn/shop/products/tanbowhat.png?crop=region&crop_height=1386&crop_left=175&crop_top=0&crop_width=1034&v=1681931352&width=480",
       "name": "Baby's First Hat,Tan Bow",
       "brand": "Brand",
       "price": "$900",
+      "category": "card",
       "originalPrice": "$1500"
     },
     {
-      "id": "4",
+      "id": "22",
       "imageUrl": "https://spearmintlove.com/cdn/shop/files/IMG-2555.jpg?crop=region&crop_height=1600&crop_left=4&crop_top=0&crop_width=1190&v=1710884356&width=480",
       "name": "Organic Waffle Knot Bow,Little Red Heart(On Pink)",
       "brand": "Brand",
       "price": "$1200",
+      "category": "card",
       "originalPrice": "$1600"
     },
     {
-      "id": "5",
+      "id": "23",
       "imageUrl": "https://babies-nutrition.com/cdn/shop/files/497924E3-BE41-4B9A-892C-6340CF7BC51D_1024x.jpg?v=1713728879",
       "name": "Kendamil First Baby Infant Milk",
       "brand": "Brand",
@@ -197,7 +201,7 @@
       "originalPrice": "$4000"
     },
     {
-      "id": "6",
+      "id": "24",
       "imageUrl": "https://babies-nutrition.com/cdn/shop/files/FullSizeRender_c0634e39-8595-4cb4-9c3f-34de2f34678c_1024x.jpg?v=1711851788",
       "name": "Aussie Bubs Goat Milk  Infant Formula",
       "brand": "Brand",

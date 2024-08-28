@@ -1,6 +1,7 @@
 
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 // const products = [
 //   {
@@ -117,6 +118,7 @@ import axios from "axios";
 
 const Girl = () => {
   const [data, setData] = useState([]);
+  const navigate=useNavigate()
 
   useEffect(() => {
     const fn = async () => {
@@ -144,6 +146,7 @@ const Girl = () => {
                   src={item.imageUrl}
                   alt="Product"
                   className="h-80 w-72 object-cover rounded-t-xl"
+                  onClick={()=>navigate(`/detail/${item.id}`)}
                 />
                 <div className="px-4 py-3">
                   <span className="text-gray-400 mr-3 uppercase text-xs">

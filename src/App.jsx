@@ -15,6 +15,8 @@ import Boy from "./components/Pages/Boy";
 import Register from "./components/Register";
 import Login from "./components/Pages/Login";
 import Collections from "./components/Pages/Collections";
+import Detailproduct from "./components/Detailproduct";
+import Cards from "./components/Cards";
 
 
 
@@ -38,6 +40,7 @@ const [search,setSearch]=useState('')
         <Route path="/contact" element={<Contact />} />
         <Route path="/register" element={<Register/>} />
         <Route  path="/login" element={<Login/>}/>
+        <Route  path="/detail/:userid" element={<Detailproduct/>}/>
         </Routes>
         </contexts.Provider>
         <div>
