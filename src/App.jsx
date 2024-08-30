@@ -16,18 +16,36 @@ import Register from "./components/Register";
 import Login from "./components/Pages/Login";
 import Collections from "./components/Pages/Collections";
 import Detailproduct from "./components/Detailproduct";
-import Cards from "./components/Cards";
-
-
 
 export const contexts=createContext();
 
 function App() {
 const [search,setSearch]=useState('')
+const uId=localStorage.getItem("id")
+
+
+
+const addtocart = async (items)=>{
+  const response =await axios.get(`http://localhost:3000/users${uId}`)
+  const datass= response.data.cart 
+  const res=datass.find((item)=>item.id===items.id)
+
+  if(res){
+    toast.warning("Product already exist")
+  }else{
+    const updatecart=[...datass , items]
+    await axios.patch(`http://localhost:3000/datas${uId}`,{cart:updatecart})
+    toast.success("Product added")
+  }
+
+};
+
+
+
 
   return (
     <div>
-      <contexts.Provider value={{search,setSearch}}>
+      <contexts.Provider value={{search,setSearch,addtocart}}>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -41,6 +59,7 @@ const [search,setSearch]=useState('')
         <Route path="/register" element={<Register/>} />
         <Route  path="/login" element={<Login/>}/>
         <Route  path="/detail/:userid" element={<Detailproduct/>}/>
+        
         </Routes>
         </contexts.Provider>
         <div>

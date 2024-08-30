@@ -56,6 +56,24 @@
     },
     {
       "id": "7",
+      "imageUrl": "https://spearmintlove.com/cdn/shop/files/Quincy-Mae-_23.png?v=1724283586&width=480",
+      "name": "Organic Waffle Babydoll Dress,Pumbkins",
+      "brand": "Brand",
+      "price": "$4800",
+      "category": "Girl",
+      "originalPrice": "$5500"
+    },
+    {
+      "id": "8",
+      "imageUrl": "https://spearmintlove.com/cdn/shop/files/Angel-Dear-Peter-Pan-Bubble-With-Skirt-Climbing-Roses-1.png?v=1724426890&width=480",
+      "name": "Ruffle Peter Pan Collar Bubble w/shirt,Climbing Roses",
+      "brand": "Brand",
+      "price": "$3000",
+      "category": "Girl",
+      "originalPrice": "$4000"
+    },
+    {
+      "id": "9",
       "imageUrl": "https://spearmintlove.com/cdn/shop/files/beaniebluestripe.png?crop=region&crop_height=2354&crop_left=299&crop_top=0&crop_width=1754&v=1698697826&width=480",
       "name": "Dusty Blue Stripe",
       "brand": "Brand",
@@ -64,7 +82,25 @@
       "originalPrice": "$1499"
     },
     {
-      "id": "8",
+      "id": "10",
+      "imageUrl": "https://spearmintlove.com/cdn/shop/files/sun--organic-dune-bubble-1-a.jpg?crop=region&crop_height=1600&crop_left=3&crop_top=0&crop_width=1192&v=1712613875&width=480",
+      "name": "Sun/Organic Dune Bubble",
+      "brand": "Brand",
+      "price": "$1600",
+      "category": "Boy",
+      "originalPrice": "$1900"
+    },
+    {
+      "id": "11",
+      "imageUrl": "https://spearmintlove.com/cdn/shop/files/muslin-retro-sunsuit-cowboy-boots-1-a.png?crop=region&crop_height=1600&crop_left=3&crop_top=0&crop_width=1192&v=1710883668&width=480",
+      "name": "Muslin Retro Sunsuit,CowBoy Boots ",
+      "brand": "Brand",
+      "price": "$2500",
+      "category": "Boy",
+      "originalPrice": "$3000"
+    },
+    {
+      "id": "12",
       "imageUrl": "https://spearmintlove.com/cdn/shop/files/bear-paw-footie.jpg?crop=region&crop_height=1600&crop_left=3&crop_top=0&crop_width=1192&v=1710881598&width=480",
       "name": "Organic Waffle Basic Zip Footie",
       "brand": "Brand",
@@ -73,7 +109,7 @@
       "originalPrice": "$3000"
     },
     {
-      "id": "9",
+      "id": "13",
       "imageUrl": "https://spearmintlove.com/cdn/shop/files/whitegraybunny.png?crop=region&crop_height=1600&crop_left=3&crop_top=0&crop_width=1192&v=1710779071&width=480",
       "name": "Baby's First Hat White/Gray Bunny",
       "brand": "Brand",
@@ -82,7 +118,7 @@
       "originalPrice": "$1500"
     },
     {
-      "id": "10",
+      "id": "14",
       "imageUrl": "https://spearmintlove.com/cdn/shop/files/muslin-overall-tractors-1-a.png?crop=region&crop_height=1600&crop_left=3&crop_top=0&crop_width=1192&v=1710883705&width=480",
       "name": "Muslin Overall Tractors",
       "brand": "Brand",
@@ -91,7 +127,7 @@
       "originalPrice": "$2500"
     },
     {
-      "id": "11",
+      "id": "15",
       "imageUrl": "https://spearmintlove.com/cdn/shop/files/IMG-2760.jpg?crop=region&crop_height=1600&crop_left=3&crop_top=0&crop_width=1192&v=1710992371&width=480",
       "name": "Slipper socks,Golden Brown Bear",
       "brand": "Brand",
@@ -100,7 +136,7 @@
       "originalPrice": "$1000"
     },
     {
-      "id": "12",
+      "id": "16",
       "imageUrl": "https://spearmintlove.com/cdn/shop/files/matcha-milkshake-bay-jumpsuit.jpg?crop=region&crop_height=1600&crop_left=3&crop_top=0&crop_width=1192&v=1716483326&width=480",
       "name": "Matcha Milkshake Checkboard/Organic Bay Jumsuit",
       "brand": "Brand",
@@ -109,55 +145,79 @@
       "originalPrice": "$3199"
     },
     {
-      "id": "13",
+      "id": "17",
       "imageUrl": "https://spearmintlove.com/cdn/shop/files/Angel-Dear-Tutu-Skirt-Footballs-pink-1.png?v=1721680023&width=480",
       "name": "Football Tutu Skirt,Pink",
       "brand": "Brand",
       "price": "$2800",
+      "category": "arrivals",
       "originalPrice": "$3500"
     },
     {
-      "id": "14",
+      "id": "18",
       "imageUrl": "https://spearmintlove.com/cdn/shop/files/3-ice-skating-tulle-dress.jpg?v=1724265210&width=480",
       "name": "Long Sleeve Layered Tulle Dress,Ice Skating",
       "brand": "Brand",
       "price": "$3200",
+      "category": "arrivals",
       "originalPrice": "$4000"
     },
     {
-      "id": "15",
+      "id": "19",
       "imageUrl": "https://spearmintlove.com/cdn/shop/files/IMG-2234.jpg?crop=region&crop_height=1600&crop_left=3&crop_top=0&crop_width=1192&v=1710819225&width=480",
       "name": "Mashroom Organic/T-shirt Bubble",
       "brand": "Brand",
       "price": "$1800",
+      "category": "arrivals",
       "originalPrice": "$2500"
     },
     {
-      "id": "16",
+      "id": "20",
       "imageUrl": "https://spearmintlove.com/cdn/shop/files/IMG-7928.jpg?v=1722378498&width=480",
       "name": "2-Way Zip Ruffle Footie,Footballs Pink",
       "brand": "Brand",
       "price": "$2800",
+      "category": "arrivals",
       "originalPrice": "$3500"
     },
     {
-      "id": "17",
+      "id": "21",
       "imageUrl": "https://spearmintlove.com/cdn/shop/files/Angel-Dear-Ruffled-Peter-Pan-Collar-Bubble-With-Skirt-Ediths-Floral-2.png?v=1724111959&width=480",
       "name": "Ruffled Peter Pan Collar Bubble w/Skirt,Edith's Floral",
       "brand": "Brand",
       "price": "$3000",
+      "category": "arrivals",
       "originalPrice": "$4000"
     },
     {
-      "id": "18",
+      "id": "22",
       "imageUrl": "https://spearmintlove.com/cdn/shop/files/Photo_May_07_2024_3_26_33_PM_1.jpg?v=1721362517&width=480",
       "name": "Bliss Checkboard Miniblankets",
       "brand": "Brand",
       "price": "$3200",
+      "category": "arrivals",
       "originalPrice": "$3900"
     },
     {
-      "id": "19",
+      "id": "23",
+      "imageUrl": "https://spearmintlove.com/cdn/shop/files/IMG-4964.jpg?crop=region&crop_height=2400&crop_left=0&crop_top=0&crop_width=1799&v=1720044871&width=480",
+      "name": "Sweater Roomper,Hocus Pocus",
+      "brand": "Brand",
+      "price": "$3500",
+      "category": "arrivals",
+      "originalPrice": "$3900"
+    },
+    {
+      "id": "24",
+      "imageUrl": "https://spearmintlove.com/cdn/shop/files/C08D8520-3107-42C5-A24D-C124A66FBA43.jpg?crop=region&crop_height=1600&crop_left=0&crop_top=0&crop_width=1199&v=1720036446&width=480",
+      "name": "Knot Beanie,Pumpkin Spice Latte",
+      "brand": "Brand",
+      "price": "$1100",
+      "category": "arrivals",
+      "originalPrice": "$1500"
+    },
+    {
+      "id": "25",
       "imageUrl": "https://cribandkids.com/cdn/shop/products/VISTA23_THO_Set-1200x1262-290dd1a_0ac128ee-8cc1-4990-b770-1c2e16ded63a.jpg?v=1709761533&width=1200",
       "name": "UPPAbaby Vista V2 Stroller",
       "brand": "Brand",
@@ -166,7 +226,7 @@
       "originalPrice": "$45000"
     },
     {
-      "id": "20",
+      "id": "26",
       "imageUrl": "https://www.funcorp.in/cdn/shop/files/81Sr7NroqqL._SL1500_1370x.jpg?v=1690026233",
       "name": "Barbie Birthday Wishes Blonde Doll Pink",
       "brand": "Brand",
@@ -175,7 +235,7 @@
       "originalPrice": "$2500"
     },
     {
-      "id": "21",
+      "id": "27",
       "imageUrl": "https://spearmintlove.com/cdn/shop/products/tanbowhat.png?crop=region&crop_height=1386&crop_left=175&crop_top=0&crop_width=1034&v=1681931352&width=480",
       "name": "Baby's First Hat,Tan Bow",
       "brand": "Brand",
@@ -184,7 +244,7 @@
       "originalPrice": "$1500"
     },
     {
-      "id": "22",
+      "id": "28",
       "imageUrl": "https://spearmintlove.com/cdn/shop/files/IMG-2555.jpg?crop=region&crop_height=1600&crop_left=4&crop_top=0&crop_width=1190&v=1710884356&width=480",
       "name": "Organic Waffle Knot Bow,Little Red Heart(On Pink)",
       "brand": "Brand",
@@ -193,52 +253,49 @@
       "originalPrice": "$1600"
     },
     {
-      "id": "23",
-      "imageUrl": "https://babies-nutrition.com/cdn/shop/files/497924E3-BE41-4B9A-892C-6340CF7BC51D_1024x.jpg?v=1713728879",
-      "name": "Kendamil First Baby Infant Milk",
+      "id": "29",
+      "imageUrl": "https://spearmintlove.com/cdn/shop/files/IMG-5134.jpg?crop=region&crop_height=1600&crop_left=0&crop_top=0&crop_width=1199&v=1720272575&width=480",
+      "name": "Sweater Romper,Basic Witch",
       "brand": "Brand",
-      "price": "$3895",
+      "price": "$3200",
+      "category": "card",
       "originalPrice": "$4000"
     },
     {
-      "id": "24",
+      "id": "30",
+      "imageUrl": "https://spearmintlove.com/cdn/shop/files/boo-knit-pom-hat-black-1-a.jpg?crop=region&crop_height=1600&crop_left=0&crop_top=0&crop_width=1199&v=1713297971&width=480",
+      "name": "Boo knit Pom Hat,Black",
+      "brand": "Brand",
+      "price": "$2100",
+      "category": "card",
+      "originalPrice": "$2800"
+    },
+    {
+      "id": "31",
       "imageUrl": "https://babies-nutrition.com/cdn/shop/files/FullSizeRender_c0634e39-8595-4cb4-9c3f-34de2f34678c_1024x.jpg?v=1711851788",
       "name": "Aussie Bubs Goat Milk  Infant Formula",
       "brand": "Brand",
       "price": "$3500",
+      "category": "card",
+      "originalPrice": "$4000"
+    },
+    {
+      "id": "32",
+      "imageUrl": "https://babies-nutrition.com/cdn/shop/files/497924E3-BE41-4B9A-892C-6340CF7BC51D_1024x.jpg?v=1713728879",
+      "name": "Kendamil First Baby Infant Milk",
+      "brand": "Brand",
+      "price": "$3895",
+      "category": "card",
       "originalPrice": "$4000"
     }
   ],
   "users": [
     {
-      "id": "9a61",
-      "username": "nishanaaa",
+      "id": "228c",
+      "username": "nishana",
       "email": "nishanaf731@gmail.com",
-      "password": "@Mohdaman7"
-    },
-    {
-      "id": "2a7a",
-      "username": "nishanaaa",
-      "email": "muhammedaman@gmail.com",
-      "password": "@nIshana2"
-    },
-    {
-      "id": "d35e",
-      "username": "nishana",
-      "email": "soudhapshana@gmail.com",
-      "password": "Ashana@1"
-    },
-    {
-      "id": "41f9",
-      "username": "nishana",
-      "email": "niyas123@gmail.com",
-      "password": "Nishana@12"
-    },
-    {
-      "id": "a832",
-      "username": "nishana",
-      "email": "shana1234@gmailcom",
-      "password": "A@1hjkl"
+      "password": "Shana@123",
+      "cart": []
     }
   ]
 }

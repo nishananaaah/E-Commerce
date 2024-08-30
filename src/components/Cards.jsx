@@ -18,13 +18,17 @@ const Cards = () => {
 
   return (
     <div className="flex flex-wrap gap-6 justify-center">
-      <div className="text-center p-10 w-full">
-        <h1 className="font-mono text-4xl mb-4 text-red-300">FOR GIRLS</h1>
+      <br />
+      <div className="text-center p-10 w-full bg-red-300">
+        <h1 className="font-mono text-4xl mb-4 text-white  p-4 border-b-2 border-white border-opacity-0 hover:border-opacity-100 hover:text-white duration-200 cursor-pointer active ">BEST SALES FOR YOUR BABY</h1>
+        
       </div>
+    
       {data.filter((item) => item.category === 'card').map((item, index) => {
         return (
-          <div key={index} className="w-72">
+          <div key={index} className="w-72 mt-1">
             <div className="bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
+            
               <a href="#">
                 <img
                   src={item.imageUrl}
