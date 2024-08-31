@@ -329,66 +329,6 @@
       "password": "Shana@123",
       "cart": [
         {
-          "id": "9",
-          "imageUrl": "https://spearmintlove.com/cdn/shop/files/beaniebluestripe.png?crop=region&crop_height=2354&crop_left=299&crop_top=0&crop_width=1754&v=1698697826&width=480",
-          "name": "Dusty Blue Stripe",
-          "brand": "Brand",
-          "price": 1000,
-          "category": "Boy",
-          "originalPrice": 1499,
-          "quantity": 2
-        },
-        {
-          "id": "10",
-          "imageUrl": "https://spearmintlove.com/cdn/shop/files/sun--organic-dune-bubble-1-a.jpg?crop=region&crop_height=1600&crop_left=3&crop_top=0&crop_width=1192&v=1712613875&width=480",
-          "name": "Sun/Organic Dune Bubble",
-          "brand": "Brand",
-          "price": 1600,
-          "category": "Boy",
-          "originalPrice": 1900,
-          "quantity": 1
-        },
-        {
-          "id": "16",
-          "imageUrl": "https://spearmintlove.com/cdn/shop/files/matcha-milkshake-bay-jumpsuit.jpg?crop=region&crop_height=1600&crop_left=3&crop_top=0&crop_width=1192&v=1716483326&width=480",
-          "name": "Matcha Milkshake Checkboard/Organic Bay Jumsuit",
-          "brand": "Brand",
-          "price": 2000,
-          "category": "Boy",
-          "originalPrice": 3199,
-          "quantity": 1
-        },
-        {
-          "id": "1",
-          "imageUrl": "https://spearmintlove.com/cdn/shop/files/ruffle-neck-bodysuit-rosewater-dot.jpg?v=1724268558&width=480",
-          "name": "Organic Ruffle Neck Bodysuit",
-          "brand": "Brand",
-          "price": 2300,
-          "category": "Girl",
-          "originalPrice": 3500,
-          "quantity": 1
-        },
-        {
-          "id": "17",
-          "imageUrl": "https://spearmintlove.com/cdn/shop/files/Angel-Dear-Tutu-Skirt-Footballs-pink-1.png?v=1721680023&width=480",
-          "name": "Football Tutu Skirt,Pink",
-          "brand": "Brand",
-          "price": 2800,
-          "category": "arrivals",
-          "originalPrice": 3500,
-          "quantity": 1
-        },
-        {
-          "id": "26",
-          "imageUrl": "https://www.funcorp.in/cdn/shop/files/81Sr7NroqqL._SL1500_1370x.jpg?v=1690026233",
-          "name": "Barbie Birthday Wishes Blonde Doll Pink",
-          "brand": "Brand",
-          "price": 1999,
-          "category": "card",
-          "originalPrice": 2500,
-          "quantity": 1
-        },
-        {
           "id": "25",
           "imageUrl": "https://cribandkids.com/cdn/shop/products/VISTA23_THO_Set-1200x1262-290dd1a_0ac128ee-8cc1-4990-b770-1c2e16ded63a.jpg?v=1709761533&width=1200",
           "name": "UPPAbaby Vista V2 Stroller",
@@ -416,6 +356,26 @@
           "price": 4800,
           "category": "Girl",
           "originalPrice": 5500,
+          "quantity": 1
+        },
+        {
+          "id": "6",
+          "imageUrl": "https://spearmintlove.com/cdn/shop/files/beanie-enchanted-pumpkins.jpg?v=1724103965&width=480",
+          "name": "Organic Banded Top-Knot",
+          "brand": "Brand",
+          "price": 1100,
+          "category": "Girl",
+          "originalPrice": 2000,
+          "quantity": 1
+        },
+        {
+          "id": "8",
+          "imageUrl": "https://spearmintlove.com/cdn/shop/files/Angel-Dear-Peter-Pan-Bubble-With-Skirt-Climbing-Roses-1.png?v=1724426890&width=480",
+          "name": "Ruffle Peter Pan Collar Bubble w/shirt,Climbing Roses",
+          "brand": "Brand",
+          "price": 3000,
+          "category": "Girl",
+          "originalPrice": 4000,
           "quantity": 1
         }
       ]

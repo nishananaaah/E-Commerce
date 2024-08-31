@@ -19,6 +19,7 @@ import Detailproduct from "./components/Detailproduct";
 import axios from "axios";
 import { Toaster,toast } from "sonner";  
 import Addtocart from "./components/Addtocart";
+import CheckoutPage from "./components/Pages/Checkoutpage";
 export const contexts=createContext();
 
 function App() {
@@ -63,6 +64,7 @@ const addtocart = async (items)=>{
         <Route  path="/login" element={<Login/>}/>
         <Route  path="/detail/:userid" element={<Detailproduct/>}/>
         <Route path="/cart" element={<Addtocart/>}/>
+        <Route path="/checkoutpage" element={<CheckoutPage/>} />
        </Routes>
         </contexts.Provider>
         <div>

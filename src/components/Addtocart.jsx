@@ -140,7 +140,7 @@ const Addtocart = () => {
                                 <h1 className="font-semibold">${total}</h1>
                             </div>
                             <button className="bg-red-300 text-white py-2 px-4 rounded-lg mt-4 w-full" 
-                                    onClick={()=>navigate('/checkout')}
+                                    onClick={()=>navigate('/checkoutpage')}
                              >Checkout</button>
                         </div>
                     </div>
