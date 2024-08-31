@@ -13,12 +13,25 @@ const navigate=useNavigate()
       </div>
       <div className="flex flex-wrap  gap-3 mt-4 ">
         <div className="bg-girl-bg w-[97.5vh] pl-3 h-[71vh] bg-no-repeat ml-6">
-            <h1 className="text-white font-bold text-3xl">GIRL</h1>
-            <button onClick={()=>navigate('/girl')} ><h3 className="p-4 border-b-2 border-white border-opacity-0 hover:border-opacity-100 hover:text-white duration-200 cursor-pointer active text-red-500"> SHOP FOR HER</h3></button>
+            {/* <h1 className="text-white font-bold text-3xl">GIRL</h1> */}
+            <button
+  onClick={() => navigate('/girl')}
+  className="bg-pink-500 text-white font-bold py-3 px-6 rounded-lg shadow-md hover:bg-red-300 hover:shadow-lg transition duration-200 transform hover:scale-105"
+>
+  <h3 className="text-xl tracking-wide">SHOP FOR HER</h3>
+</button>
+
         </div>
         <div className="bg-boy-bg w-[97.5vh] h-[71vh]  bg-no-repeat">
-            <h1 className="text-white font-bold text-3xl">BOY</h1>
-            <button onClick={()=>navigate('/boy')}><h3 className="p-4 border-b-2 border-white border-opacity-0 hover:border-opacity-100 hover:text-white duration-200 cursor-pointer active text-red-500"> SHOP FOR HIM</h3></button>
+            {/* <h1 className="text-white font-bold text-3xl">BOY</h1> */}
+            <button
+  onClick={() => navigate('/girl')}
+  className="bg-pink-500 text-white font-bold py-3 px-6 rounded-lg shadow-md hover:bg-red-300 hover:shadow-lg transition duration-200 transform hover:scale-105"
+>
+  <h3 className="text-xl tracking-wide">SHOP FOR HIM</h3>
+</button>
+
+
     
         </div>
       </div>
