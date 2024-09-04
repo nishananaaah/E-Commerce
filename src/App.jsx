@@ -20,6 +20,8 @@ import axios from "axios";
 import { Toaster,toast } from "sonner";  
 import Addtocart from "./components/Addtocart";
 import CheckoutPage from "./components/Pages/Checkoutpage";
+import Admin from "./Adminside/Admin";
+import Productsection from "./Adminside/Productsection";
 export const contexts=createContext();
 
 function App() {
@@ -65,6 +67,10 @@ const addtocart = async (items)=>{
         <Route  path="/detail/:userid" element={<Detailproduct/>}/>
         <Route path="/cart" element={<Addtocart/>}/>
         <Route path="/checkoutpage" element={<CheckoutPage/>} />
+        <Route  path="/admin" element={<Admin/>} />
+        <Route  path="/productsection" element={<Productsection/>}/>
+       
+
        </Routes>
         </contexts.Provider>
         <div>

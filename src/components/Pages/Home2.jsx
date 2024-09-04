@@ -16,7 +16,7 @@ const navigate=useNavigate()
             {/* <h1 className="text-white font-bold text-3xl">GIRL</h1> */}
             <button
   onClick={() => navigate('/girl')}
-  className="bg-pink-500 text-white font-bold py-3 px-6 rounded-lg shadow-md hover:bg-red-300 hover:shadow-lg transition duration-200 transform hover:scale-105"
+  className="bg-pink-500 text-white font-bold py-3 px-6 rounded-lg shadow-md hover:bg-pink-600 hover:shadow-lg transition duration-200 transform hover:scale-105"
 >
   <h3 className="text-xl tracking-wide">SHOP FOR HER</h3>
 </button>
@@ -25,8 +25,8 @@ const navigate=useNavigate()
         <div className="bg-boy-bg w-[97.5vh] h-[71vh]  bg-no-repeat">
             {/* <h1 className="text-white font-bold text-3xl">BOY</h1> */}
             <button
-  onClick={() => navigate('/girl')}
-  className="bg-pink-500 text-white font-bold py-3 px-6 rounded-lg shadow-md hover:bg-red-300 hover:shadow-lg transition duration-200 transform hover:scale-105"
+  onClick={() => navigate('/boy')}
+  className="bg-pink-500 text-white font-bold py-3 px-6 rounded-lg shadow-md hover:bg-pink-600 hover:shadow-lg transition duration-200 transform hover:scale-105"
 >
   <h3 className="text-xl tracking-wide">SHOP FOR HIM</h3>
 </button>

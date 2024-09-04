@@ -327,17 +327,8 @@
       "username": "nishana",
       "email": "nishanaf731@gmail.com",
       "password": "Shana@123",
+      "admin": true,
       "cart": [
-        {
-          "id": "25",
-          "imageUrl": "https://cribandkids.com/cdn/shop/products/VISTA23_THO_Set-1200x1262-290dd1a_0ac128ee-8cc1-4990-b770-1c2e16ded63a.jpg?v=1709761533&width=1200",
-          "name": "UPPAbaby Vista V2 Stroller",
-          "brand": "Brand",
-          "price": 39999,
-          "category": "card",
-          "originalPrice": 45000,
-          "quantity": 1
-        },
         {
           "id": "28",
           "imageUrl": "https://spearmintlove.com/cdn/shop/files/IMG-2555.jpg?crop=region&crop_height=1600&crop_left=4&crop_top=0&crop_width=1190&v=1710884356&width=480",
@@ -349,33 +340,33 @@
           "quantity": 1
         },
         {
-          "id": "7",
-          "imageUrl": "https://spearmintlove.com/cdn/shop/files/Quincy-Mae-_23.png?v=1724283586&width=480",
-          "name": "Organic Waffle Babydoll Dress,Pumbkins",
+          "id": "18",
+          "imageUrl": "https://spearmintlove.com/cdn/shop/files/3-ice-skating-tulle-dress.jpg?v=1724265210&width=480",
+          "name": "Long Sleeve Layered Tulle Dress,Ice Skating",
           "brand": "Brand",
-          "price": 4800,
-          "category": "Girl",
-          "originalPrice": 5500,
-          "quantity": 1
-        },
-        {
-          "id": "6",
-          "imageUrl": "https://spearmintlove.com/cdn/shop/files/beanie-enchanted-pumpkins.jpg?v=1724103965&width=480",
-          "name": "Organic Banded Top-Knot",
-          "brand": "Brand",
-          "price": 1100,
-          "category": "Girl",
-          "originalPrice": 2000,
-          "quantity": 1
-        },
-        {
-          "id": "8",
-          "imageUrl": "https://spearmintlove.com/cdn/shop/files/Angel-Dear-Peter-Pan-Bubble-With-Skirt-Climbing-Roses-1.png?v=1724426890&width=480",
-          "name": "Ruffle Peter Pan Collar Bubble w/shirt,Climbing Roses",
-          "brand": "Brand",
-          "price": 3000,
-          "category": "Girl",
+          "price": 3200,
+          "category": "arrivals",
           "originalPrice": 4000,
+          "quantity": 1
+        },
+        {
+          "id": "30",
+          "imageUrl": "https://spearmintlove.com/cdn/shop/files/boo-knit-pom-hat-black-1-a.jpg?crop=region&crop_height=1600&crop_left=0&crop_top=0&crop_width=1199&v=1713297971&width=480",
+          "name": "Boo knit Pom Hat,Black",
+          "brand": "Brand",
+          "price": 2100,
+          "category": "card",
+          "originalPrice": 2800,
+          "quantity": 1
+        },
+        {
+          "id": "1",
+          "imageUrl": "https://spearmintlove.com/cdn/shop/files/ruffle-neck-bodysuit-rosewater-dot.jpg?v=1724268558&width=480",
+          "name": "Organic Ruffle Neck Bodysuit",
+          "brand": "Brand",
+          "price": 2300,
+          "category": "Girl",
+          "originalPrice": 3500,
           "quantity": 1
         }
       ]
@@ -394,6 +385,34 @@
           "price": 2100,
           "category": "card",
           "originalPrice": 2800,
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": "535c",
+      "username": "afrasherin",
+      "email": "afrasherin61@gmail.com",
+      "password": "S@1anan",
+      "cart": [
+        {
+          "id": "2",
+          "imageUrl": "https://spearmintlove.com/cdn/shop/files/IMG-2757.jpg?crop=region&crop_height=1600&crop_left=3&crop_top=0&crop_width=1192&v=1710992285&width=480",
+          "name": "Slipper Socks,Brown Bear",
+          "brand": "Brand",
+          "price": 800,
+          "category": "Girl",
+          "originalPrice": 1200,
+          "quantity": 6
+        },
+        {
+          "id": "3",
+          "imageUrl": "https://spearmintlove.com/cdn/shop/files/smocked-headband-appleberry.jpg?v=1724107293&width=480",
+          "name": "Organic Smocked Headband",
+          "brand": "Brand",
+          "price": 1300,
+          "category": "Girl",
+          "originalPrice": 2000,
           "quantity": 1
         }
       ]

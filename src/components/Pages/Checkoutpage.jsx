@@ -34,10 +34,10 @@ const CheckoutPage = () => {
                       <h3 className="text-base text-white">{item.name}</h3>
                       <ul className="text-xs text-gray-300 space-y-2 mt-2">
                         <li className="flex flex-wrap gap-4">
-                          Quantity <span className="ml-auto">{item.quantity}</span>
+                          Quantity <h3 className="ml-auto">{item.quantity}</h3>
                         </li>
                         <li className="flex flex-wrap gap-4">
-                          Total Price <span className="ml-auto">${item.price}</span>
+                          Total Price <h3 className="ml-auto">${item.price}</h3>
                         </li>
                       </ul>
                     </div>
@@ -47,7 +47,7 @@ const CheckoutPage = () => {
             </div>
             <div className="bg-gray-300 w-full p-4">
               <h4 className="flex flex-wrap gap-4 text-base text-black">
-                Total <span className="ml-auto">$84.00</span>
+                Total <h3 className="ml-auto">$84.00</h3>
               </h4>
             </div>
           </div>

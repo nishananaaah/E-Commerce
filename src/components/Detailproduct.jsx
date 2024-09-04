@@ -1,10 +1,12 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import { contexts } from '../App';
 
 const Detailproduct = () => {
     const {userid}=useParams();
     const [data,setData]=useState([]);
+    const {addtocart}=useContext(contexts)
 
     useEffect(()=>{
 
@@ -102,7 +104,7 @@ const Detailproduct = () => {
                   <div className="flex space-x-4 mb-6">
                     <button
                       className="bg-red-300 flex gap-2 items-center text-white px-6 py-2 rounded-md hover:bg-red-300 focus:outline-none focus:ring-2 focus:ring-red-300 focus:ring-offset-2"
-                      onClick={() => addToCart(item)}
+                      onClick={() => addtocart(item)}
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
