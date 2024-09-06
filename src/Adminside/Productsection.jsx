@@ -25,7 +25,8 @@ const ProductSection = () => {
     setEditingProduct(null);
   };
 
-  const handleDeleteProduct = (productId) => {
+  const handleDeleteProduct = async(productId) => {
+    await axios.delete(`http://localhost:3000/datas/${productId}`)
     setProducts(products.filter((product) => product.id !== productId));
   };
 
@@ -41,13 +42,6 @@ useEffect(()=>{
     fn();
 
 },[])
-
-
-
-
-
-
-
 
 
   return (

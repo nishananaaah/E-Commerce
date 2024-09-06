@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const Sidebar = () => {
   return (
     <div className="flex h-screen bg-gray-100">
-         <aside className="w-64 bg-black text-white">
+         <aside className="w-64 bg-black text-white ">
                 <div className="p-6">
                     <h1 className="text-2xl font-bold">Admin Dashboard</h1>
                     <nav className="mt-6">
@@ -20,13 +20,13 @@ const Sidebar = () => {
                                 </Link>
                             </li>
                             <li className="my-2">
-                                <a href="#" className="block p-2 rounded hover:bg-red-300">
+                                <Link to="/users"className="block p-2 rounded hover:bg-red-300">
                                     Users
-                                </a>
+                                </Link>
                             </li>
                             <li className="my-2">
                                 <a href="#" className="block p-2 rounded hover:bg-red-300">
-                                    Settings
+                                    Orders
                                 </a>
                             </li>
                         </ul>

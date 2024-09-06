@@ -27,7 +27,7 @@ const Admin = () => {
                             </li>
                             <li className="my-2">
                                 <a href="#" className="block p-2 rounded hover:bg-red-300">
-                                    Settings
+                                    Orders
                                 </a>
                             </li>
                         </ul>

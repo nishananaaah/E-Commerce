@@ -2,7 +2,7 @@ import React from "react";
 
 const Productlist = ({ products, onDeleteProduct, onEditClick }) => {
   return (
-    <div className="flex flex-col w-full p-6 bg-gray-100 rounded-lg shadow-lg">
+    <div className="flex flex-col w-full p-6 bg-gray-100 rounded-lg shadow-lg ">
       <h3 className="text-2xl font-bold text-gray-700 mb-6">Product List</h3>
 
       {products.length === 0 ? (
@@ -14,7 +14,7 @@ const Productlist = ({ products, onDeleteProduct, onEditClick }) => {
               key={product.id}
               className="flex items-center justify-between p-4 bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200"
             >
-              <div className="flex items-center space-x-4">
+              <div className="flex items-center space-x-4 w-[140vh]">
                 <img
                   className="h-16 w-16 object-cover rounded-lg"
                   src={product.imageUrl}
