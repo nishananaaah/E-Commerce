@@ -53,7 +53,7 @@ const Productform = ({ onAddProduct, onEditProduct, editingProduct, showForm, se
       </h2>
       <button ></button>
       <form onSubmit={handleSubmit} className="space-y-4">
-        {/* Form fields here */}
+        {/* Form fields  */}
         <div className="flex flex-col md:flex-row md:space-x-4">
           <div className="flex-1">
             <label className="block text-sm font-medium text-gray-700">Product ID</label>

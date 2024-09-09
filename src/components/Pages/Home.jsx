@@ -3,7 +3,6 @@ import Home2 from "./Home2";
 import Cards from "../Cards";
 import Home4 from "./Home4";
 import Home5 from "./Home5";
-import Home3 from "./Home3";
 import Header from "../Header";
 
 function Home() {
@@ -31,7 +30,7 @@ function Home() {
       </div>
       <Home2 />
       <Cards />
-      {/* <Home3/> */}
+     
       <Home4/>
       <Home5/>
    

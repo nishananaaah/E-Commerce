@@ -28,6 +28,7 @@ import Cloths from "./components/Pages/Cloths";
 import Nutrition from "./components/Pages/Nutrition";
 import Orders from "./Adminside/Orders";
 import Userdetails from "./Adminside/Userdetails";
+import Dashboard from "./Adminside/Dashboard";
 export const contexts=createContext();
 
 function App() {
@@ -82,6 +83,8 @@ const addtocart = async (items)=>{
         <Route path="nutrition" element={<Nutrition/>}/>
         <Route path="orders" element={<Orders/>}/>
         <Route path="users/:userid" element={<Userdetails/>}/>
+        <Route  path="dashboard" element={<Dashboard/>}/>
+      
       
        
 
