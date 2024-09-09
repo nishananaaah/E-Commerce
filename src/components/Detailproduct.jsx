@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { contexts } from '../App';
+import Header from './Header';
 
 const Detailproduct = () => {
     const {userid}=useParams();
@@ -20,6 +21,8 @@ const Detailproduct = () => {
 
 
   return (
+    <div>
+      <Header/>
     <div className="bg-gray-100">
       {data.map((item) => {
         return (
@@ -135,6 +138,7 @@ const Detailproduct = () => {
           </div>
         );
       })}
+    </div>
     </div>
   );
 }

@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { contexts } from "../App";
+import Header from "./Header";
 
 const Cards = () => {
   const [data, setData] = useState([]);
@@ -19,6 +20,8 @@ const Cards = () => {
 
 
   return (
+    <div>
+      <Header/>
     <div className="flex flex-wrap gap-6 justify-center">
       <br />
       <div className="text-center p-10 w-full bg-red-300">
@@ -84,6 +87,7 @@ const Cards = () => {
           </div>
         );
       })}
+    </div>
     </div>
   ); 
 

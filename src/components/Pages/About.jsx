@@ -1,7 +1,11 @@
 import React from 'react';
+import Header from '../Header';
 
 function About() {
   return (
+    <div>
+      <Header/>
+      
     <div className="flex flex-col md:flex-row items-center justify-center bg-gray-100 py-12 px-4">
       <div className="w-full md:w-1/2 flex justify-center">
         <img
@@ -24,6 +28,7 @@ function About() {
           "A New Baby Is Like The Beginning Of All Things - Wonder, Hope, A Dream Of Possibilities."
         </p>
       </div>
+    </div>
     </div>
   );
 }

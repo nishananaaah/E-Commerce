@@ -40,26 +40,26 @@ function Header() {
       <div className="nav font-semibold text-lg">
         <ul className="flex items-center">
           <li className="p-4 border-b-2 border-white border-opacity-0 hover:border-opacity-100 hover:text-white duration-200 cursor-pointer active">
-            <NavLink to="home">HOME </NavLink>
+            <NavLink to="/home">HOME </NavLink>
           </li>
           {/* <li className="p-4 border-b-2 border-white border-opacity-0 hover:border-opacity-100 hover:text-white duration-200 cursor-pointer font-mono">
             <NavLink to="shop">Shop</NavLink>
           </li> */}
 
           <li className="p-4 border-b-2 border-white border-opacity-0 hover:border-opacity-100 hover:text-white duration-200 cursor-pointer">
-            <NavLink to="girl">GIRL</NavLink>
+            <NavLink to="/girl">GIRL</NavLink>
           </li>
           <li className="p-4 border-b-2 border-white border-opacity-0 hover:border-opacity-100 hover:text-white duration-200 cursor-pointer">
-            <NavLink to="boy">BOY</NavLink>
+            <NavLink to="/boy">BOY</NavLink>
           </li>
           <li className="p-4 border-b-2 border-white border-opacity-0 hover:border-opacity-100 hover:text-white duration-200 cursor-pointer">
-            <NavLink to="collections">COLLECTIONS</NavLink>
+            <NavLink to="/collections">COLLECTIONS</NavLink>
           </li>
           <li className="p-4 border-b-2 border-white border-opacity-0 hover:border-opacity-100 hover:text-white duration-200 cursor-pointer">
-            <NavLink to="aboutus">ABOUT</NavLink>
+            <NavLink to="/aboutus">ABOUT</NavLink>
           </li>
           <li className="p-4 border-b-2 border-white border-opacity-0 hover:border-opacity-100 hover:text-white duration-200 cursor-pointer">
-            <NavLink to="contact">CONTACT</NavLink>
+            <NavLink to="/contact">CONTACT</NavLink>
           </li>
         </ul>
       </div>

@@ -4,9 +4,12 @@ import Cards from "../Cards";
 import Home4 from "./Home4";
 import Home5 from "./Home5";
 import Home3 from "./Home3";
+import Header from "../Header";
 
 function Home() {
   return (
+    <div>
+      <Header/>
     <div className="bg-white">
       <div className="bg-slate-50 leading-9">
         <h1 className="text-center text-2xl font-mono leading-9 ">
@@ -32,6 +35,7 @@ function Home() {
       <Home4/>
       <Home5/>
    
+    </div>
     </div>
   );
 }

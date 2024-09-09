@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { contexts } from "../../App";
+import Header from "../Header";
 
 
 const Cloths = () => {
@@ -20,6 +21,8 @@ const Cloths = () => {
 
 
   return (
+    <div>
+      <Header/>
     <div className="flex flex-wrap gap-6 justify-center">
      <div className="text-center p-10 w-full">
         <h1 className="font-mono text-4xl mb-4 text-red-300">CLOTHS</h1>
@@ -83,6 +86,7 @@ const Cloths = () => {
           </div>
         );
       })}
+    </div>
     </div>
   ); 
 

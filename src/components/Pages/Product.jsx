@@ -1,7 +1,10 @@
 import React from 'react';
+import Header from '../Header';
 
 const Product = ({ product, addToCart }) => {
   return (
+    <div>
+      <Header/>
     <div className="max-w-sm rounded overflow-hidden shadow-lg m-4 p-4 bg-white">
       <img className="w-full" src={product.image} alt={product.name} />
       <div className="px-6 py-4">
@@ -16,6 +19,7 @@ const Product = ({ product, addToCart }) => {
           Add to Cart
         </button>
       </div>
+    </div>
     </div>
   );
 };

@@ -3,6 +3,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { contexts } from "../../App";
 import { useNavigate } from "react-router-dom";
+import Header from "../Header";
 
 const Collections = () => {
   const [data, setData] = useState([]);
@@ -35,6 +36,8 @@ const Collections = () => {
   console.log(data);
 
   return (
+    <div>
+      <Header/>
     <div className="flex flex-wrap gap-6 justify-center">
       <div className="text-center p-10 w-full">
         <h1 className="font-mono text-4xl mb-4 text-red-300">COLLECTIONS</h1>
@@ -96,6 +99,7 @@ const Collections = () => {
           </div>
         );
       })}
+    </div>
     </div>
   );
   

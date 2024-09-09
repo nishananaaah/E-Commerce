@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import axios from "axios"
 import { useNavigate } from "react-router-dom";
 import { contexts } from "../../App";
+import Header from "../Header";
 
 
 function Boy() {
@@ -21,6 +22,8 @@ function Boy() {
   
 
   return (
+    <div>
+      <Header/>
     <div className="flex flex-wrap gap-6 justify-center">
       <div className="text-center p-10 w-full">
         <h1 className="font-mono text-4xl mb-4 text-red-300">FOR BOYS</h1>
@@ -80,6 +83,7 @@ function Boy() {
           </div>
         );
       })}
+    </div>
     </div>
   );
   

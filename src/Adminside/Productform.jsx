@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const Productform = ({ onAddProduct, onEditProduct, editingProduct }) => {
+const Productform = ({ onAddProduct, onEditProduct, editingProduct, showForm, setShowForm }) => {
   const [formData, setFormData] = useState({
     id: '',
     imageUrl: '',
@@ -40,14 +40,19 @@ const Productform = ({ onAddProduct, onEditProduct, editingProduct }) => {
       originalPrice: '',
       quantity: '',
     });
+    setShowForm(false); // Hide form after submission
   };
+
+  if (!showForm) return null; // Render nothing if the form should be hidden
 
   return (
     <div className="bg-white p-6 rounded-lg shadow-md w-full">
       <h2 className="text-xl font-semibold text-gray-800 mb-4">
         {editingProduct ? 'Edit Product' : 'Add New Product'}
       </h2>
+      <button ></button>
       <form onSubmit={handleSubmit} className="space-y-4">
+        {/* Form fields here */}
         <div className="flex flex-col md:flex-row md:space-x-4">
           <div className="flex-1">
             <label className="block text-sm font-medium text-gray-700">Product ID</label>
@@ -161,7 +166,43 @@ const Productform = ({ onAddProduct, onEditProduct, editingProduct }) => {
   );
 };
 
-export default Productform;
+const App = () => {
+  const [showForm, setShowForm] = useState(false);
+  const [editingProduct, setEditingProduct] = useState(null);
+
+  const handleAddProduct = (product) => {
+    // Add product to cart logic here
+    console.log('Product added:', product);
+    setShowForm(false); // Hide form after adding
+  };
+
+  const handleEditProduct = (product) => {
+    // Edit product logic here
+    console.log('Product updated:', product);
+    setShowForm(false); // Hide form after updating
+  };
+
+  return (
+    <div>
+      <button
+        onClick={() => setShowForm(!showForm)}
+        className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition"
+      >
+        {showForm ? 'Hide Form' : 'Add New Product'}
+      </button>
+      <Productform
+        onAddProduct={handleAddProduct}
+        onEditProduct={handleEditProduct}
+        editingProduct={editingProduct}
+        showForm={showForm}
+        setShowForm={setShowForm}
+      />
+    </div>
+  );
+};
+
+export default App;
+
 
 
   

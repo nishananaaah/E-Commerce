@@ -26,6 +26,8 @@ import Users from "./Adminside/Users";
 import Toys from "./components/Pages/Toys";
 import Cloths from "./components/Pages/Cloths";
 import Nutrition from "./components/Pages/Nutrition";
+import Orders from "./Adminside/Orders";
+import Userdetails from "./Adminside/Userdetails";
 export const contexts=createContext();
 
 function App() {
@@ -55,28 +57,31 @@ const addtocart = async (items)=>{
 
   return (
     <div>
+      <Toaster richColors position="bottom-right"/>
       <contexts.Provider value={{search,setSearch,addtocart}}>
-      <Header />
+      {/* <Header /> */}
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/girl" element={<Girl />} />
-        <Route path="/boy" element={<Boy />} />
-        <Route path="/collections" element={<Collections/>}/>
+        <Route path="home" element={<Home />} />
+        <Route path="girl" element={<Girl />} />
+        <Route path="boy" element={<Boy />} />
+        <Route path="collections" element={<Collections/>}/>
         {/* <Route path="/shop" element={<Shop />} /> */}
-        <Route path="/aboutus" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/register" element={<Register/>} />
-        <Route  path="/login" element={<Login/>}/>
-        <Route  path="/detail/:userid" element={<Detailproduct/>}/>
-        <Route path="/cart" element={<Addtocart/>}/>
-        <Route path="/checkoutpage" element={<CheckoutPage/>} />
-        <Route  path="/admin" element={<Admin/>} />
-        <Route  path="/productsection" element={<Productsection/>}/>
-        <Route path="/users" element={<Users/>}/>
-        <Route path="/toys" element={<Toys/>}/>
-        <Route path="/cloths" element={<Cloths/>}/>
-        <Route path="/nutrition" element={<Nutrition/>}/>
+        <Route path="aboutus" element={<About />} />
+        <Route path="contact" element={<Contact />} />
+        <Route path="register" element={<Register/>} />
+        <Route  path="login" element={<Login/>}/>
+        <Route  path="detail/:userid" element={<Detailproduct/>}/>
+        <Route path="cart" element={<Addtocart/>}/>
+        <Route path="checkoutpage" element={<CheckoutPage/>} />
+        <Route  path="admin" element={<Admin/>} />
+        <Route  path="productsection" element={<Productsection/>}/>
+        <Route path="users" element={<Users/>}/>
+        <Route path="toys" element={<Toys/>}/>
+        <Route path="cloths" element={<Cloths/>}/>
+        <Route path="nutrition" element={<Nutrition/>}/>
+        <Route path="orders" element={<Orders/>}/>
+        <Route path="users/:userid" element={<Userdetails/>}/>
       
        
 
@@ -89,7 +94,7 @@ const addtocart = async (items)=>{
 
           <Footer />
         </div>
-      
+       
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import React from 'react'
+import Header from '../Header';
 
 // import React from "react";
 // // import "./styles.css";
@@ -6,6 +7,8 @@ import React from 'react'
 
 export default function Contact() {
   return (
+    <div>
+      <Header/>
     <div>
       <section className="text-gray-700 body-font relative">
         <div className="container px-5 py-24 mx-auto">
@@ -139,6 +142,7 @@ export default function Contact() {
           </div>
         </div>
       </section>
+    </div>
     </div>
   );
 }

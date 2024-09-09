@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'sonner';
+import Header from './Header';
 
 const Addtocart = () => {
     const navigate=useNavigate()
@@ -55,6 +56,8 @@ const Addtocart = () => {
 
 
         return (
+            <div>
+                <Header/>
         <div className="bg-gray-100 h-[full] py-8">
             <div className="container mx-auto px-4">
                 <h1 className="text-2xl font-semibold mb-4">Shopping Cart</h1>
@@ -146,6 +149,7 @@ const Addtocart = () => {
                     </div>
                 </div>
             </div>
+        </div>
         </div>
     );
 }
