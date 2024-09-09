@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Navbar from './Navbar';
 
 const Productform = ({ onAddProduct, onEditProduct, editingProduct, showForm, setShowForm }) => {
   const [formData, setFormData] = useState({
@@ -171,19 +172,19 @@ const App = () => {
   const [editingProduct, setEditingProduct] = useState(null);
 
   const handleAddProduct = (product) => {
-    // Add product to cart logic here
+    
     console.log('Product added:', product);
-    setShowForm(false); // Hide form after adding
+    setShowForm(false); 
   };
 
   const handleEditProduct = (product) => {
-    // Edit product logic here
+    
     console.log('Product updated:', product);
-    setShowForm(false); // Hide form after updating
+    setShowForm(false); 
   };
 
   return (
-    <div>
+  <div><div>
       <button
         onClick={() => setShowForm(!showForm)}
         className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition"
@@ -197,6 +198,7 @@ const App = () => {
         showForm={showForm}
         setShowForm={setShowForm}
       />
+    </div>
     </div>
   );
 };

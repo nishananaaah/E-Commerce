@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Sidebar from "./Sidebar";
 import { Link } from "react-router-dom";
+import Navbar from "./Navbar";
 
 const Users = () => {
   const [users, setUsers] = useState([]);
@@ -19,6 +20,8 @@ const Users = () => {
   }, []);
 
   return (
+    <div>
+      <Navbar/>
     <div className="min-h-screen bg-gray-100">
       <div className="flex">
         <Sidebar />
@@ -67,6 +70,7 @@ const Users = () => {
           </div>
         </main>
       </div>
+    </div>
     </div>
   );
 };

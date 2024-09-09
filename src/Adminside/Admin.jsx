@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Navbar from './Navbar';
 
 const Admin = () => {
     return (
+        <div>
+            <Navbar/>
         <div className="flex h-screen bg-gray-100">
             {/* Sidebar */}
             <aside className="w-64 bg-black text-white">
@@ -63,6 +66,7 @@ const Admin = () => {
                     </div>
                 </section>
             </div>
+        </div>
         </div>
     );
 };

@@ -3,6 +3,7 @@ import axios from 'axios';
 import Sidebar from './Sidebar';
 import Productform from './ProductForm';
 import Productlist from './ProductList';
+import Navbar from './Navbar';
 
 const ProductSection = () => {
   const [products, setProducts] = useState([]);
@@ -58,6 +59,8 @@ const ProductSection = () => {
   };
 
   return (
+    <div>
+      <Navbar/>
     <div className='flex'>
       <Sidebar />
       <div className="p-4 flex-1">
@@ -92,6 +95,7 @@ const ProductSection = () => {
           </>
         )}
       </div>
+    </div>
     </div>
   );
 };

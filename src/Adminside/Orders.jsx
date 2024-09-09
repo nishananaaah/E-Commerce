@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import Navbar from './Navbar';
+import Sidebar from './Sidebar';
 
 const Orders = () => {
   const [orders, setOrders] = useState([]);
@@ -26,7 +28,11 @@ const Orders = () => {
   }, []);
 
   return (
-    <div className="p-8 bg-gray-100 min-h-screen">
+    <div>
+        <Navbar />
+        <div className='flex'>
+            <Sidebar/>
+    <div className="p-8 bg-gray-100 min-h-screen flex-1">
       <h1 className="text-3xl font-bold text-gray-800 mb-6">Orders</h1>
       {orders.length === 0 ? (
         <p className="text-gray-600">No orders found.</p>
@@ -69,6 +75,8 @@ const Orders = () => {
           ))}
         </div>
       )}
+    </div>
+    </div>
     </div>
   );
 };

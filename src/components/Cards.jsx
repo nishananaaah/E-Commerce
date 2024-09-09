@@ -21,7 +21,7 @@ const Cards = () => {
 
   return (
     <div>
-      <Header/>
+     
     <div className="flex flex-wrap gap-6 justify-center">
       <br />
       <div className="text-center p-10 w-full bg-red-300">

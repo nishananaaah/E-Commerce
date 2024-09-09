@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import Navbar from './Navbar';
+import Sidebar from './Sidebar';
 
 const Userdetails = () => {
   const { userid } = useParams();
@@ -24,7 +26,11 @@ const Userdetails = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div>
+        <Navbar/>
+        <div className='flex'>
+            <Sidebar/>
+    <div className="min-h-screen bg-gray-100 flex-1">
       <div className="flex">
         <main className="flex-1 p-6">
           <div className="bg-white shadow-lg rounded-lg p-8 max-w-4xl mx-auto">
@@ -82,6 +88,8 @@ const Userdetails = () => {
           </div>
         </main>
       </div>
+    </div>
+    </div>
     </div>
   );
 };

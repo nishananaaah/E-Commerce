@@ -1,7 +1,11 @@
 import React from "react";
 
 const Productlist = ({ products, onDeleteProduct, onEditClick }) => {
+
+
+
   return (
+    
     <div className="flex flex-col w-full p-6 bg-gray-100 rounded-lg shadow-lg ">
       <h3 className="text-2xl font-bold text-gray-700 mb-6">Product List</h3>
 

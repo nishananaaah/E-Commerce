@@ -664,6 +664,26 @@
           "category": "Girl",
           "originalPrice": 2000,
           "quantity": 1
+        },
+        {
+          "id": "53",
+          "imageUrl": "https://slurrpfarm.com/cdn/shop/files/1.2kgChocoCrunch_amazon_1500x1500_1copy_750x.jpg?v=1706867856",
+          "name": "Jumbo Pack Choco Crunch - Ragi Stars and Moon",
+          "brand": "Brand",
+          "price": 3895,
+          "category": "nutrition",
+          "originalPrice": 4000,
+          "quantity": 1
+        },
+        {
+          "id": "17",
+          "imageUrl": "https://spearmintlove.com/cdn/shop/files/Angel-Dear-Tutu-Skirt-Footballs-pink-1.png?v=1721680023&width=480",
+          "name": "Football Tutu Skirt,Pink",
+          "brand": "Brand",
+          "price": 2800,
+          "category": "arrivals",
+          "originalPrice": 3500,
+          "quantity": 1
         }
       ]
     },
