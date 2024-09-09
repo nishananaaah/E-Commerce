@@ -51,7 +51,6 @@ const Productform = ({ onAddProduct, onEditProduct, editingProduct, showForm, se
       <h2 className="text-xl font-semibold text-gray-800 mb-4">
         {editingProduct ? 'Edit Product' : 'Add New Product'}
       </h2>
-      <button ></button>
       <form onSubmit={handleSubmit} className="space-y-4">
         {/* Form fields  */}
         <div className="flex flex-col md:flex-row md:space-x-4">
