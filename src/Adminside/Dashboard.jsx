@@ -52,7 +52,7 @@ const Dashboard = () => {
 
                     <div className="p-4 bg-white rounded-lg shadow-md">
                         <h3 className="text-xl font-medium">Orders</h3>
-                        <p className="mt-2 text-gray-600">23</p>
+                        <p className="mt-2 text-gray-600">2</p>
                     </div>
                 </section>
             </div>

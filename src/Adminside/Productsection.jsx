@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Sidebar from './Sidebar';
-import Productform from './ProductForm';
-import Productlist from './ProductList';
 import Navbar from './Navbar';
 
 const Productsection = () => {
-  const [products, setProducts] = useState([]);
-  const [categories, setCategories] = useState(["Girl", "Boy", "cloths","toys","nutrition"]);
-  const [selectedCategory, setSelectedCategory] = useState("");
-  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [products, setProducts] = useState([]);// Stores the list of products fetched from the server
+  const [categories, setCategories] = useState(["Girl", "Boy", "cloths","toys","nutrition"]);// predefined categories for filtering
+  const [selectedCategory, setSelectedCategory] = useState(""); //Holds the currently selected category for filtering products.
+  const [selectedProduct, setSelectedProduct] = useState(null);// Stores the product currently being edited//
   const [editMode, setEditMode] = useState(false);//edit button
   const [formData, setFormData] = useState({
     id: "",
@@ -21,8 +19,8 @@ const Productsection = () => {
     quantity: "",
    
   });
-  const [showForm, setShowForm] = useState(false);
-  const [showProduct, setShowProduct] = useState(true);
+  const [showForm, setShowForm] = useState(false);//controlls  the  visibility of the  productform//
+  const [showProduct, setShowProduct] = useState(true);//constrolls  the  visibilty of the  product list//
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -242,7 +240,7 @@ const Productsection = () => {
                   </tr>
                 </thead>
                 <tbody className="bg-white divide-y divide-gray-200">
-                  {filteredProducts.map((product) => (
+                  {filteredProducts.map((product) => (     //map the product
                     <tr key={product.id}>
                       <td className="px-6 py-4 text-sm font-medium text-gray-900">{product.id}</td>
                       <td className="px-6 py-4 text-sm text-gray-500">
