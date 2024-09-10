@@ -8,7 +8,7 @@ const Productsection = () => {
   const [categories, setCategories] = useState(["Girl", "Boy", "cloths","toys","nutrition"]);// predefined categories for filtering
   const [selectedCategory, setSelectedCategory] = useState(""); //Holds the currently selected category for filtering products.
   const [selectedProduct, setSelectedProduct] = useState(null);// Stores the product currently being edited//
-  const [editMode, setEditMode] = useState(false);//edit button
+  const [editMode, setEditMode] = useState(false);//edit button display the  editform
   const [formData, setFormData] = useState({
     id: "",
     price: "",
@@ -34,7 +34,7 @@ const Productsection = () => {
     fetchProducts();
   }, []);
 
-  const handleChange = (e) => {
+  const handleChange = (e) => { //input change
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
@@ -42,7 +42,7 @@ const Productsection = () => {
     }));
   };
 
-  const handleAddProduct = async () => {
+  const handleAddProduct = async () => {//add product 
     const newProduct = {
       ...formData,
       price: parseFloat(formData.price),
@@ -56,6 +56,7 @@ const Productsection = () => {
         newProduct
       );
       const addedProduct = response.data;
+  
 
       setProducts((prevProducts) => [...prevProducts, addedProduct]);
       resetForm();

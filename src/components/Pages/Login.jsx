@@ -19,9 +19,8 @@ const Login = () => {
         const data=response.data.find((item)=>item.email===email && item.password===password)
         if(data.admin===true){
           navigate('/admin')
-
         }
-          else if(!data){
+        else if(!data){
             toast.warning("User Invalid")
         }else{
             navigate('/')
