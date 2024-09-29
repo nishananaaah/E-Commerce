@@ -56,7 +56,7 @@ const Toys = () => {
                         {item.originalPrice}
                       </p>
                     </del>
-                    <div className="ml-auto">
+                    <div className="ml-auto">    
                       {/* <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="20"
