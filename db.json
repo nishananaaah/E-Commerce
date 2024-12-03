@@ -803,6 +803,25 @@
         "shipping": 0,
         "total": 8580
       }
+    },
+    {
+      "id": "a129",
+      "username": "shahaaanaaa",
+      "email": "nishanaf73rty1@gmail.com",
+      "password": "Shana@123",
+      "cart": [
+        {
+          "id": "7",
+          "imageUrl": "https://spearmintlove.com/cdn/shop/files/Quincy-Mae-_23.png?v=1724283586&width=480",
+          "name": "Organic Waffle Babydoll Dress,Pumbkins",
+          "brand": "Brand",
+          "price": 4800,
+          "category": "Girl",
+          "originalPrice": 5500,
+          "quantity": 2
+        }
+      ],
+      "order": []
     }
   ]
 }

@@ -1,25 +1,43 @@
-import React, { useContext, useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import axios from "axios"
 import { useNavigate } from "react-router-dom";
-import { contexts } from "../../App";
 import Header from "../Header";
+import { toast } from "sonner";
+import userApi from "../../API/userInter";
 
 
 function Boy() {
-  const [data, setData] = useState([]);
-  const navigate=useNavigate();
-  const {addtocart}=useContext(contexts)
+  const navigate = useNavigate();
+  const [products, setProducts] = useState([]);
+
+  const id = localStorage.getItem("user");
 
   useEffect(() => {
-    const fn = async () => {
-      const response = await axios.get("http://localhost:3000/datas");
-      setData(response.data);
+    const fetchProducts = async () => {
+      try {
+        const response = await axios.get("http://localhost:3000/api/users/products");
+        setProducts(response?.data.data || []);
+      } catch (error) {
+        console.error("Failed to fetch products:", error);
+        toast.error("Failed to load products");
+      }
     };
-    fn();
+
+    fetchProducts();
   }, []);
 
-  console.log(data);
-  
+  const handleAddToCart = async (productId) => {
+    try {
+      const user = JSON.parse(id); 
+      const userId = user._id;
+
+      await userApi.post(`/${userId}/cart/${productId}`);
+      toast.success("Item added to cart");
+    } catch (error) {
+      console.error("Failed to add item to cart:", error);
+      toast.error("Could not add item to cart");
+    }
+  };
 
   return (
     <div>
@@ -28,7 +46,7 @@ function Boy() {
       <div className="text-center p-10 w-full">
         <h1 className="font-mono text-4xl mb-4 text-red-300">FOR BOYS</h1>
       </div>
-      {data.filter((item) => item.category === 'Boy').map((item, index) => {
+      {products.filter((item) => item.category === 'Boy').map((item, index) => {
         return (
           <div key={index} className="w-72">
             <div className="bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
@@ -37,14 +55,14 @@ function Boy() {
                   src={item.imageUrl}
                   alt="Product"
                   className="h-80 w-72 object-cover rounded-t-xl"
-                  onClick={()=>navigate(`/detail/${item.id}`)}
+                  onClick={()=>navigate(`/detail/${item._id}`)}
                 />
                 <div className="px-4 py-3">
                   <span className="text-gray-400 mr-3 uppercase text-xs">
                     {item.brand}
                   </span>
                   <p className="text-lg font-bold text-black truncate block capitalize">
-                    {item.name}
+                    {item.title}
                   </p>
                   <div className="flex items-center">
                     <p className="text-lg font-semibold text-black cursor-auto my-3">
@@ -72,7 +90,7 @@ function Boy() {
                       </svg> */}
                     </div>
                     <button
-               onClick={() => addtocart(item)}
+               onClick={() => handleAddToCart(item._id)}
                className="bg-pink-500 text-white font-bold py-2 px-4 rounded shadow-lg hover:bg-pink-600 transition duration-200 transform hover:scale-105"
 > Add to Cart</button>
 

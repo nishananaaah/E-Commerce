@@ -1,13 +1,10 @@
 import { createContext, useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
-import Header from "./components/Header";
+// import Header from "./components/Header";
 import Footer from "./components/Footer";
 // import Register from './components/Register'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {  Routes, Route } from "react-router-dom";
 import Home from "./components/Pages/Home";
-import Shop from "./components/Pages/Shop";
 import About from "./components/Pages/About";
 import Contact from "./components/Pages/Contact";
 import Girl from "./components/Pages/Girl";
@@ -72,7 +69,7 @@ const addtocart = async (items)=>{
         <Route path="contact" element={<Contact />} />
         <Route path="register" element={<Register/>} />
         <Route  path="login" element={<Login/>}/>
-        <Route  path="detail/:userid" element={<Detailproduct/>}/>
+        <Route  path="detail/:productid" element={<Detailproduct/>}/>
         <Route path="cart" element={<Addtocart/>}/>
         <Route path="checkoutpage" element={<CheckoutPage/>} />
         <Route  path="admin" element={<Admin/>} />

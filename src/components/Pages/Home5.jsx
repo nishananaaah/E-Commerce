@@ -1,20 +1,45 @@
 import axios from "axios";
-import React, { useContext, useEffect, useState } from "react";
+import {useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { contexts } from "../../App";
+import { toast } from "sonner";
+
 
 const Home5 = () => {
-  const [data, setData] = useState([]);
   const navigate = useNavigate();
-  const { addtocart } = useContext(contexts);
+  const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    const fn = async () => {
-      const response = await axios.get("http://localhost:3000/datas");
-      setData(response.data);
+    const fetchProducts = async () => {
+      try {
+        const response = await axios.get("http://localhost:3000/api/users/products");
+        setProducts(response?.data.data || []);
+      } catch (error) {
+        console.error("Failed to fetch products:", error);
+        toast.error("Failed to load products");
+      }
     };
-    fn();
+
+    fetchProducts();
   }, []);
+
+  const addtocart = async (item) => {
+    const isLoggedIn = !!localStorage.getItem("id");
+
+    if (!isLoggedIn) {
+      toast.warning("Please login to add items to your cart");
+      navigate("/login");
+    } else {
+      try {
+        const userId = localStorage.getItem("id"); // Retrieve user ID
+        await axios.post(`http://localhost:3000/api/users/${userId}/cart/${item.id}`); // Add product to cart
+        toast.success("Item added to cart");
+      } catch (error) {
+        console.error("Failed to add item to cart:", error);
+        toast.error("Could not add item to cart");
+      }
+    }
+  };
+
 
   return (
     <div className="flex flex-wrap gap-6 justify-center">
@@ -25,7 +50,7 @@ const Home5 = () => {
         </h1>
       </div>
 
-      {data
+      {products
         .filter((item) => item.category === "arrivals")
         .map((item, index) => {
           return (
@@ -36,14 +61,14 @@ const Home5 = () => {
                     src={item.imageUrl}
                     alt="Product"
                     className="h-80 w-72 object-cover rounded-t-xl"
-                    onClick={() => navigate(`/detail/${item.id}`)}
+                    onClick={() => navigate(`/detail/${item._id}`)}
                   />
                   <div className="px-4 py-3">
                     <span className="text-gray-400 mr-3 uppercase text-xs">
                       {item.brand}
                     </span>
                     <p className="text-lg font-bold text-black truncate block capitalize">
-                      {item.name}
+                      {item.title}
                     </p>
                     <div className="flex items-center">
                       <p className="text-lg font-semibold text-black cursor-auto my-3">
