@@ -23,9 +23,12 @@ import Users from "./Adminside/Users";
 import Toys from "./components/Pages/Toys";
 import Cloths from "./components/Pages/Cloths";
 import Nutrition from "./components/Pages/Nutrition";
-import Orders from "./Adminside/Orders";
 import Userdetails from "./Adminside/Userdetails";
 import Dashboard from "./Adminside/Dashboard";
+import AdminLogin from "./Adminside/AdminLogin";
+import OrderAdmin from "./Adminside/OrderAdmin";
+import Orders from "./components/Pages/Orders";
+
 export const contexts=createContext();
 
 function App() {
@@ -78,9 +81,11 @@ const addtocart = async (items)=>{
         <Route path="toys" element={<Toys/>}/>
         <Route path="cloths" element={<Cloths/>}/>
         <Route path="nutrition" element={<Nutrition/>}/>
-        <Route path="orders" element={<Orders/>}/>
+        <Route path="orders" element={<OrderAdmin/>}/>
         <Route path="users/:userid" element={<Userdetails/>}/>
         <Route  path="dashboard" element={<Dashboard/>}/>
+        <Route path="adminlogin" element={<AdminLogin/>}/>
+        <Route path="order" element={<Orders/>}/>
       
       
        

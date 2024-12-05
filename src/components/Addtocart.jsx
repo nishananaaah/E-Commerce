@@ -1,129 +1,221 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import Header from "./Header";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Addtocart = () => {
-  const navigate = useNavigate();
   const [cart, setCart] = useState([]);
+  const [loading, setLoading] = useState(true); // State for loading
+  const [error, setError] = useState(null); // State for errors
 
-  const uId = localStorage.getItem("id");
-  const fn = async () => {
-    const response = await axios.get(`http://localhost:3000/users/${uId}`);
-    setCart(response.data.cart);
+  const navigate = useNavigate();
+  const userId = JSON.parse(localStorage.getItem("user"))?._id;
+  const userName = JSON.parse(localStorage.getItem("user"))?.username;
+  const token = localStorage.getItem("token");
+
+  // Fetch cart items
+  const fetchCart = async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const response = await axios.get(
+        `http://localhost:3000/api/users/${userId}/cart`,
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+      setCart(response.data);
+    } catch (err) {
+      setError("Failed to fetch cart items. Please try again.");
+      console.error(err);
+    } finally {
+      setLoading(false);
+    }
   };
+
   useEffect(() => {
-    fn();
-  });
-  const removeFromcart = async (id) => {
-    const del = cart.filter((item) => item.id != id);
-    await axios.patch(`http://localhost:3000/users/${uId}`, { cart: del });
-    fn();
-    toast.success("item removed");
+    fetchCart();
+  }, []);
+
+  // Cart operations
+  const updateCart = async (endpoint, method, productId) => {
+    try {
+      await axios({
+        url: `http://localhost:3000/api/users/${userId}/cart/${productId}/${endpoint}`,
+        method,
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      fetchCart();
+      toast.success("Cart updated successfully");
+    } catch (err) {
+      toast.error("Failed to update cart");
+      console.error(err);
+    }
   };
-  const increaseQuantity = async (id) => {
-    const updatedcart = cart.map((item) =>
-      item.id === id ? { ...item, quantity: item.quantity + 1 } : item
+
+  const removeFromCart = (productId) => updateCart("remove", "delete", productId);
+  const increaseQuantity = (productId) => updateCart("increment", "patch", productId);
+  const decreaseQuantity = (productId) => updateCart("decrement", "put", productId);
+
+  // Totals calculation
+  
+  const calculateTotals = () => {
+    const subtotal = cart?.reduce(
+      (sum, item) => sum + item.productId.price * item.quantity,
+      0
     );
-    await axios.patch(`http://localhost:3000/users/${uId}`, {
-      cart: updatedcart,
-    });
-    toast.success("Quantity increased");
+    const taxes = subtotal * 0.1;
+    const shipping = cart.length > 0 ? 10 : 0;
+    return { subtotal, taxes, shipping, total: subtotal + taxes + shipping };
   };
-  const decreaseQuantity = async (id) => {
-    const updatedcart = cart.map((item) =>
-      item.id === id
-        ? { ...item, quantity: Math.max(1, item.quantity - 1) }
-        : item
-    );
-    await axios.patch(`http://localhost:3000/users/${uId}`, {
-      cart: updatedcart,
-    });
-    setCart(updatedcart);
-    toast.success("Quantity decreased");
+
+  const { subtotal, taxes, shipping, total } = calculateTotals();
+
+  // Razorpay Integration
+  const handleCheckout = async () => {
+    const loadScript = () =>
+      new Promise((resolve) => {
+        const script = document.createElement("script");
+        script.src = "https://checkout.razorpay.com/v1/checkout.js";
+        script.onload = () => resolve(true);
+        script.onerror = () => resolve(false);
+        document.body.appendChild(script);
+      });
+
+    const razorpayLoaded = await loadScript();
+    if (!razorpayLoaded) {
+      toast.error("Failed to load Razorpay SDK");
+      return;
+    }
+
+    try {
+      const { data } = await axios.post(
+        `http://localhost:3000/api/users/payment/${userId}`,
+        { amount: subtotal },
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+
+      const options = {
+        key: "rzp_test_Zf3XYt9mX9y7cO",
+        amount: data.amount,
+        currency: data.currency,
+        name: "Your Shop",
+        description: "Purchase",
+        image: "/logo.png",
+        order_id: data.id,
+        handler: async (response) => {
+          const paymentData = {
+            razorpay_order_id: response.razorpay_order_id,
+            razorpay_payment_id: response.razorpay_payment_id,
+            razorpay_signature: response.razorpay_signature,
+          };
+
+          try {
+            await axios.post(
+              `http://localhost:3000/api/users/verifypayment`,
+              paymentData,
+              { headers: { Authorization: `Bearer ${token}` } }
+            );
+            toast.success("Payment successful!");
+            setCart([]);
+            navigate("/");
+          } catch (err) {
+            toast.error("Payment verification failed");
+            console.error(err);
+          }
+        },
+        prefill: { name: userName, email: "user@example.com", contact: "1234567890" },
+        theme: { color: "#3399cc" },
+      };
+
+      const razorpay = new Razorpay(options);
+      razorpay.open();
+    } catch (err) {
+      toast.error("Checkout failed");
+      console.error(err);
+    }
   };
-  const calculateSubtotal = () => {
-    return cart.reduce((total, item) => total + item.price * item.quantity, 0);
-  };
-  const calculateTaxes = (subtotal) => {
-    return subtotal * 0.1;
-  };
-  const calculateShipping = () => {
-    return 0;
-  };
-  const subtotal = calculateSubtotal();
-  const taxes = calculateTaxes(subtotal);
-  const shipping = calculateShipping();
-  const total = subtotal + taxes + shipping;
 
   return (
     <div>
       <Header />
-      <div className="bg-gray-100 h-[full] py-8">
+      <div className="bg-gray-100 py-8">
         <div className="container mx-auto px-4">
           <h1 className="text-2xl font-semibold mb-4">Shopping Cart</h1>
           <div className="flex flex-col md:flex-row gap-4">
+            {/* Cart Items Section */}
             <div className="md:w-3/4">
-              <div className="bg-white rounded-lg shadow-md p-6 mb-4">
+              <div className="bg-white rounded-lg shadow-md p-6">
                 <table className="w-full">
                   <thead>
                     <tr>
-                      <th className="text-left font-semibold">Product</th>
-                      <th className="text-left font-semibold">Price</th>
-                      <th className="text-left font-semibold">Quantity</th>
-                      <th className="text-left font-semibold">Total</th>
+                      <th>Product</th>
+                      <th>Price</th>
+                      <th>Quantity</th>
+                      <th>Total</th>
+                      <th></th>
                     </tr>
                   </thead>
                   <tbody>
-                    {cart.length === 0 ? (
+                    {loading ? (
                       <tr>
-                        <td colSpan="4" className="py-4 text-center">
-                          {" "}
-                          Your cart is empty
+                        <td colSpan="5" className="text-center py-4">
+                          Loading...
+                        </td>
+                      </tr>
+                    ) : error ? (
+                      <tr>
+                        <td colSpan="5" className="text-center py-4">
+                          {error}{" "}
+                          <button
+                            onClick={fetchCart}
+                            className="text-blue-500 underline"
+                          >
+                            Retry
+                          </button>
+                        </td>
+                      </tr>
+                    ) : cart.length === 0 ? (
+                      <tr>
+                        <td colSpan="5" className="text-center py-4">
+                          Your cart is empty.
                         </td>
                       </tr>
                     ) : (
                       cart.map((item) => (
-                        <tr key={item.id}>
-                          <td className="py-4">
+                        <tr key={item._id}>
+                          <td>
                             <div className="flex items-center">
                               <img
+                                src={item.productId.imageUrl}
+                                alt={item.productId.title}
                                 className="h-16 w-16 mr-4"
-                                src={item.imageUrl}
-                                alt={item.name}
                               />
-                              <h3 className="font-semibold">{item.name}</h3>
+                              <span>{item.productId.title}</span>
                             </div>
                           </td>
-                          <td className="py-4">${item.price}</td>
-                          <td className="py-4">
+                          <td>${item.productId.price}</td>
+                          <td>
                             <div className="flex items-center">
                               <button
-                                onClick={() => decreaseQuantity(item.id)}
-                                className="border rounded-md py-2 px-4 mr-2"
+                                onClick={() => decreaseQuantity(item.productId._id)}
+                                className="px-2"
                               >
                                 -
                               </button>
-                              <h3 className="text-center w-8">
-                                {item.quantity}
-                              </h3>
-
+                              <span>{item.quantity}</span>
                               <button
-                                onClick={() => increaseQuantity(item.id)}
-                                className="border rounded-md py-2 px-4 ml-2"
+                                onClick={() => increaseQuantity(item.productId._id)}
+                                className="px-2"
                               >
                                 +
                               </button>
                             </div>
                           </td>
-                          <td className="py-4">
-                            ${item.price * item.quantity}
-                          </td>
-                          <td className="py-4">
+                          <td>${item.productId.price * item.quantity}</td>
+                          <td>
                             <button
-                              onClick={() => removeFromcart(item.id)}
-                              className="text-red-500 hover:text-red-700"
+                              onClick={() => removeFromCart(item.productId._id)}
+                              className="text-red-500"
                             >
                               Remove
                             </button>
@@ -135,31 +227,23 @@ const Addtocart = () => {
                 </table>
               </div>
             </div>
+
+            {/* Summary Section */}
             <div className="md:w-1/4">
               <div className="bg-white rounded-lg shadow-md p-6">
                 <h2 className="text-lg font-semibold mb-4">Summary</h2>
-                <div className="flex justify-between mb-2">
-                  <h1>Subtotal</h1>
-                  <h1>${subtotal}</h1>
-                </div>
-                <div className="flex justify-between mb-2">
-                  <h1>Taxes</h1>
-                  <h1>${taxes}</h1>
-                </div>
-                <div className="flex justify-between mb-2">
-                  <h1>Shipping</h1>
-                  <h1>{shipping}</h1>
-                </div>
-                <hr className="my-2" />
-                <div className="flex justify-between mb-2">
-                  <h1 className="font-semibold">Total</h1>
-                  <h1 className="font-semibold">${total}</h1>
+                <div>
+                  <p>Subtotal: ${subtotal.toFixed(2)}</p>
+                  <p>Taxes: ${taxes.toFixed(2)}</p>
+                  <p>Shipping: ${shipping.toFixed(2)}</p>
+                  <hr />
+                  <p>Total: ${total.toFixed(2)}</p>
                 </div>
                 <button
-                  className="bg-red-300 text-white py-2 px-4 rounded-lg mt-4 w-full"
-                  onClick={() => navigate("/checkoutpage")}
+                  onClick={handleCheckout}
+                  className="bg-blue-500 text-white py-2 px-4 rounded-lg w-full mt-4"
                 >
-                  Checkout
+                  Proceed to Checkout
                 </button>
               </div>
             </div>
@@ -169,4 +253,5 @@ const Addtocart = () => {
     </div>
   );
 };
+
 export default Addtocart;

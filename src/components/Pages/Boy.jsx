@@ -3,7 +3,7 @@ import axios from "axios"
 import { useNavigate } from "react-router-dom";
 import Header from "../Header";
 import { toast } from "sonner";
-import userApi from "../../API/userInter";
+
 
 
 function Boy() {
@@ -31,7 +31,7 @@ function Boy() {
       const user = JSON.parse(id); 
       const userId = user._id;
 
-      await userApi.post(`/${userId}/cart/${productId}`);
+      await axios.post(`http://localhost:3000/api/users/${userId}/cart/${productId}`);
       toast.success("Item added to cart");
     } catch (error) {
       console.error("Failed to add item to cart:", error);

@@ -1,15 +1,18 @@
 
 import {  useEffect, useState } from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Header from "../Header";
 import { toast } from "sonner";
+import axios from "axios";
+
 
 
 
 const Girl = () => {
   const navigate = useNavigate();
   const [products, setProducts] = useState([]);
+
+  const id = localStorage.getItem("user");
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -25,21 +28,16 @@ const Girl = () => {
     fetchProducts();
   }, []);
 
-  const addtocart = async (item) => {
-    const isLoggedIn = !!localStorage.getItem("id");
+  const handleAddToCart = async (productId) => {
+    try {
+      const user = JSON.parse(id); 
+      const userId = user._id;
 
-    if (!isLoggedIn) {
-      toast.warning("Please login to add items to your cart");
-      navigate("/login");
-    } else {
-      try {
-        const userId = localStorage.getItem("id"); // Retrieve user ID
-        await axios.post(`http://localhost:3000/api/users/${userId}/cart/${item.id}`); // Add product to cart
-        toast.success("Item added to cart");
-      } catch (error) {
-        console.error("Failed to add item to cart:", error);
-        toast.error("Could not add item to cart");
-      }
+      await axios.post(`http://localhost:3000/api/users/${userId}/cart/${productId}`);
+      toast.success("Item added to cart");
+    } catch (error) {
+      console.error("Failed to add item to cart:", error);
+      toast.error("Could not add item to cart");
     }
   };
 
@@ -96,7 +94,7 @@ const Girl = () => {
                         <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
                       </svg> */}
                      <button
-  onClick={() => addtocart(item)}
+  onClick={() => handleAddToCart(item._id)}
   className="bg-pink-500 text-white font-bold py-2 px-4 rounded shadow-lg hover:bg-pink-600 transition duration-200 transform hover:scale-105"
 >
   Add to Cart

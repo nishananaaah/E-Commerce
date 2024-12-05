@@ -1,23 +1,39 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+
 import Navbar from './Navbar';
 import axios from 'axios';
 import Sidebar from './Sidebar';
+import { toast } from 'sonner';
 
 const Dashboard = () => {
-    const [data,setData]=useState([]);
-    const [user,setUser]=useState([]);
+    const [products,setProducts]=useState([]);
+    const [users,setUsers]=useState([]);
 
    useEffect(()=>{
     const fn =async()=>{
-        const response=await axios.get("http://localhost:3000/datas");
-        const res=await axios.get("http://localhost:3000/users")
-        setData(response.data);
-        setUser(res.data)
-        console.log(data,"data");
+        try {
+            const response=await axios.get("http://localhost:3000/api/admin/viewAllUsers");
+            setUsers(response?.data);
+        } catch (error) {
+            console.log(error)
+            toast.error("Failed to fetch users")
          }
+       }
     fn();
    },[])
+
+   useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await axios.get("http://localhost:3000/api/admin/products");
+        setProducts(response.data);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+        toast.error("Failed to load products!");
+      } 
+    };
+    fetchProducts()
+  }, []);
 
 
 
@@ -37,12 +53,12 @@ const Dashboard = () => {
                 <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
                     <div className="p-4 bg-white rounded-lg shadow-md">
                         <h3 className="text-xl font-medium">Total Users</h3>
-                        <p className="mt-2 text-gray-600">{user.length}</p>
+                        <p className="mt-2 text-gray-600">{users?.length}</p>
                     </div>
 
                     <div className="p-4 bg-white rounded-lg shadow-md">
                         <h3 className="text-xl font-medium">Total Product</h3>
-                        <p className="mt-2 text-gray-600">{data.length}</p>
+                        <p className="mt-2 text-gray-600">{products?.length}</p>
                     </div>
 
                     <div className="p-4 bg-white rounded-lg shadow-md">

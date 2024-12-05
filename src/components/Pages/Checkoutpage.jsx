@@ -65,7 +65,7 @@ const CheckoutPage = () => {
       await axios.patch(`http://localhost:3000/users/${uId}`, {
         order: orderData,
       });
-      toast.success("Order Successfully");
+      toast.success("Order placed Successfully!");
       setCart([]);
       await axios.patch(`http://localhost:3000/users/${uId}`, {
         cart: [],

@@ -3,6 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import { contexts } from "../App";
 import Badge from "@mui/material/Badge";
 import axios from "axios";
+import { FaBoxOpen } from "react-icons/fa";
 axios;
 
 function Header() {
@@ -33,11 +34,11 @@ function Header() {
   };
 
   return (
-    <header className="header sticky top-0 w-full bg-red-300 shadow-md flex items-center justify-between px-8 py-2 ">
+    <header className="header sticky top-0 w-full bg-red-300 shadow-md flex items-center justify-between px-8 py-2 z-50">
       {/* Logo */}
       <h1 className="w-3/12"></h1>
 
-      <div className="nav font-semibold text-lg">
+      <div className="nav font-semibold text-lg ">
         <ul className="flex items-center">
           <li className="p-4 border-b-2 border-white border-opacity-0 hover:border-opacity-100 hover:text-white duration-200 cursor-pointer active">
             <NavLink to="/home">HOME </NavLink>
@@ -96,6 +97,11 @@ function Header() {
               src="https://www.shutterstock.com/image-vector/shopping-cart-icon-flat-design-600nw-570153007.jpg"
               alt="profile"
             />
+          </NavLink>
+        </Badge>
+        <Badge badgeContent={cart.length} color="primary">
+          <NavLink to="order" className="inline-block h-5">
+          <FaBoxOpen />
           </NavLink>
         </Badge>
         <NavLink  className="inline-block" onClick={toggledown}>

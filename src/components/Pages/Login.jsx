@@ -2,7 +2,9 @@ import { useFormik } from 'formik';
 import * as yup from 'yup';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'sonner';
-import userApi from '../../API/userInter';
+import axios from 'axios';
+// import { RiAdminFill } from "react-icons";
+import { Link } from 'react-router-dom';
 
 // Validation schema
 const signupValidation = yup.object({
@@ -23,26 +25,29 @@ const Login = () => {
     validationSchema: signupValidation,
     onSubmit: async (values) => {
       try {
-        const response = await userApi.post("/login", {
+        const response = await axios.post("http://localhost:3000/api/users/login", {
           email: values.email,
           password: values.password,
         });
-
+    
         if (response.status === 200) {
           const { token, user } = response.data;
-
-          localStorage.setItem('tocken', token);
-          localStorage.setItem('user', JSON.stringify(user));
-
+    
+          console.log(token, "token", user, "user");
+    
+          // Save token and user _id to localStorage
+          localStorage.setItem('token', token); 
+          localStorage.setItem('userId', user._id); // Store only the _id
+    
           navigate('/');
           toast.success('Login completed successfully');
         }
-      } catch(error) {
+      } catch (error) {
         toast.error("Invalid email or password");
         console.log(error);
-        
       }
     }
+    
   });
 
   return (
@@ -122,6 +127,12 @@ const Login = () => {
             >
               Back
             </button>
+            <p className="mt-4">
+            <Link to="/adminlogin" className="flex items-center justify-center text-gray-400 hover:text-white">
+              {/* <RiAdminFill size={20} className="mr-2" />  */}
+               Admin Login
+            </Link>
+          </p>
           </div>
         </form>
       </div>
